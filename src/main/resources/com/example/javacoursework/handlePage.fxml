@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:controller="com.example.javacoursework.Controller.HandlePageController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(from 45.1104% 100.0% to 38.8013% 0.0%, #ffffff 0.0%, #ffffff40 100.0%);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="53.0" prefWidth="446.0" text="Форма заполнения данных вручную" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="closeButton" layoutX="832.0" layoutY="9.0" minWidth="53.0" mnemonicParsing="false" onAction="#closeButtonClick" prefHeight="41.0" prefWidth="53.0" style="-fx-background-color: transparent;" AnchorPane.rightAnchor="14.666666666666629" AnchorPane.topAnchor="9.0">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Pictures/cross.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="aboutAuthorButton" layoutX="765.0" layoutY="13.0" mnemonicParsing="false" onAction="#aboutAuthorButtonClick" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: linear-gradient(from 45.1104% 100.0% to 38.8013% 0.0%, #00cc29 0.0%, #00b224a2 100.0%); -fx-background-radius: 7;" text="Об авторе" textFill="WHITE" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Pictures/admin.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TableView fx:id="studentTable_handle" layoutX="112.0" layoutY="171.0" prefHeight="429.0" prefWidth="524.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="171.0">
+         <columns>
+            <TableColumn fx:id="full_name_handle" prefWidth="262.66669714450836" text="Фамилия имя" />
+            <TableColumn fx:id="bookNumberColumn_handle" prefWidth="259.9999694824219" text="Номер зачетной книжки" />
+         </columns>
+      </TableView>
+      <Label layoutX="541.0" layoutY="285.0" prefHeight="31.0" prefWidth="122.0" text="Преподаватель:" AnchorPane.leftAnchor="541.0" AnchorPane.topAnchor="285.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="professorName" layoutX="660.0" layoutY="288.0" prefHeight="25.0" prefWidth="201.0" promptText="Фамилия И.О." AnchorPane.leftAnchor="660.0" AnchorPane.topAnchor="288.0" />
+      <DatePicker fx:id="data" layoutX="660.0" layoutY="323.0" prefHeight="31.0" prefWidth="201.0" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="660.0" AnchorPane.topAnchor="323.0" />
+      <Label layoutX="541.0" layoutY="323.0" prefHeight="31.0" prefWidth="122.0" text="Дата:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="createDocumentButton" layoutX="550.0" layoutY="533.0" mnemonicParsing="false" onAction="#createDocumentButtonClick" prefHeight="41.0" prefWidth="319.0" style="-fx-background-color: linear-gradient(from 45.1104% 100.0% to 38.8013% 0.0%, #00cc29 0.0%, #00b224a2 100.0%); -fx-background-radius: 10;" text="Создать документ" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="550.6666666666667" AnchorPane.rightAnchor="30.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="typeSelectList" layoutX="544.0" layoutY="245.0" prefHeight="31.0" prefWidth="331.0" promptText="выберите вид аттестации" style="-fx-border-color: linear-gradient(from 45.1104% 100.0% to 38.8013% 0.0%, #00cc29 0.0%, #00b224a2 100.0%); -fx-background-color: #fff; -fx-border-radius: 8;" AnchorPane.leftAnchor="544.0" AnchorPane.topAnchor="245.0" />
+      <ComboBox fx:id="semestrSelectList" layoutX="543.0" layoutY="83.0" prefHeight="31.0" prefWidth="105.0" promptText="семестр" style="-fx-border-color: linear-gradient(from 45.1104% 100.0% to 38.8013% 0.0%, #00cc29 0.0%, #00b224a2 100.0%); -fx-background-color: #fff; -fx-border-radius: 8;" />
+      <ComboBox fx:id="formSelectList" layoutX="656.0" layoutY="83.0" prefHeight="31.0" prefWidth="105.0" promptText="форма" style="-fx-border-color: linear-gradient(from 45.1104% 100.0% to 38.8013% 0.0%, #00cc29 0.0%, #00b224a2 100.0%); -fx-background-color: #fff; -fx-border-radius: 8;" />
+      <ComboBox fx:id="stepSelectList1" layoutX="772.0" layoutY="83.0" prefHeight="31.0" prefWidth="105.0" promptText="ступень" style="-fx-border-color: linear-gradient(from 45.1104% 100.0% to 38.8013% 0.0%, #00cc29 0.0%, #00b224a2 100.0%); -fx-background-color: #fff; -fx-border-radius: 8;" />
+      <TextField fx:id="subjectField" layoutX="544.0" layoutY="204.0" prefHeight="31.0" prefWidth="331.0" promptText="Предмет" style="-fx-border-color: linear-gradient(from 45.1104% 100.0% to 38.8013% 0.0%, #00cc29 0.0%, #00b224a2 100.0%); -fx-background-color: #fff; -fx-border-radius: 8;" AnchorPane.leftAnchor="544.0" AnchorPane.topAnchor="204.0" />
+      <TextField fx:id="groupField" layoutX="544.0" layoutY="163.0" prefHeight="31.0" prefWidth="331.0" promptText="Группа" style="-fx-border-color: linear-gradient(from 45.1104% 100.0% to 38.8013% 0.0%, #00cc29 0.0%, #00b224a2 100.0%); -fx-background-color: #fff; -fx-border-radius: 8;" AnchorPane.leftAnchor="544.0" AnchorPane.topAnchor="163.0" />
+      <TextField fx:id="hoursField" layoutX="544.0" layoutY="124.0" prefHeight="31.0" prefWidth="331.0" promptText="Часы по дисциплине" style="-fx-border-color: linear-gradient(from 45.1104% 100.0% to 38.8013% 0.0%, #00cc29 0.0%, #00b224a2 100.0%); -fx-background-color: #fff; -fx-border-radius: 8;" />
+      <TextField fx:id="nameField" layoutX="14.0" layoutY="88.0" prefHeight="31.0" prefWidth="331.0" promptText="Фио" style="-fx-border-color: linear-gradient(from 45.1104% 100.0% to 38.8013% 0.0%, #00cc29 0.0%, #00b224a2 100.0%); -fx-background-color: #fff; -fx-border-radius: 8;" />
+      <TextField fx:id="bookField" layoutX="14.0" layoutY="129.0" prefHeight="31.0" prefWidth="331.0" promptText="Номер зачетной книжки" style="-fx-border-color: linear-gradient(from 45.1104% 100.0% to 38.8013% 0.0%, #00cc29 0.0%, #00b224a2 100.0%); -fx-background-color: #fff; -fx-border-radius: 8;" />
+      <Button fx:id="addStudentButton" layoutX="360.0" layoutY="86.0" mnemonicParsing="false" onAction="#addStudentButtonClick" prefHeight="75.0" prefWidth="163.0" style="-fx-background-color: linear-gradient(from 45.1104% 100.0% to 38.8013% 0.0%, #00cc29 0.0%, #00b224a2 100.0%); -fx-background-radius: 10;" text="Добавить" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
