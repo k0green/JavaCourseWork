@@ -11,9 +11,21 @@ import com.example.javacoursework.service.SubjectService;
 
 import java.util.List;
 
+/**
+ * класс реализует интерфейс AttestationTypeService и предоставляет реализацию метода getAllTypes()
+ *
+ * @author Egor
+ * @version 1.0
+ */
 public class AttestationTypeServiceImpl implements AttestationTypeService {
+
+    // Создаем объект DAO для доступа к типам аттестации
     private final AttestationTypeDao attestationTypeDao = new AttestationTypeDaoImpl();
 
+    /**
+     * Метод для получения всех типов аттестации
+     * @return список типов аттестации
+     */
     @Override
     public List<AttestationType> getAllTypes() {
         return attestationTypeDao.getAllTypes();

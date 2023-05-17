@@ -8,13 +8,15 @@
     <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
     <property name="connection.username">root</property>
     <property name="connection.password">12345678</property>
-      <mapping class="com.example.javacoursework.entity.Students"/>
+    <mapping class="com.example.javacoursework.entity.Student"/>
     <mapping class="com.example.javacoursework.entity.StudyGroup"/>
     <mapping class="com.example.javacoursework.entity.Subject"/>
     <mapping class="com.example.javacoursework.entity.AttestationType"/>
-      <mapping class="com.example.javacoursework.entity.Faculty"/>
-      <mapping class="com.example.javacoursework.entity.EducationHours"/>
-      <!-- <property name="connection.username"/> -->
+    <mapping class="com.example.javacoursework.entity.Faculty"/>
+    <mapping class="com.example.javacoursework.entity.EducationHours"/>
+    <mapping class="com.example.javacoursework.entity.Professor"/>
+    <mapping class="com.example.javacoursework.entity.Result"/>
+    <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
     <!-- DB schema will be updated if needed -->

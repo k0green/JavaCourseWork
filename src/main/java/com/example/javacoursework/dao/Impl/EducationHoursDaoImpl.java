@@ -2,13 +2,10 @@ package com.example.javacoursework.dao.Impl;
 
 import com.example.javacoursework.dao.EducationHoursDao;
 import com.example.javacoursework.entity.EducationHours;
-import com.example.javacoursework.entity.Students;
-import com.example.javacoursework.entity.Subject;
 import com.example.javacoursework.utils.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -16,7 +13,19 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
+/**
+ *  Реализация интерфейса EducationHoursDao.
+ *
+ * @author Egor
+ * @version 1.0
+ */
 public class EducationHoursDaoImpl implements EducationHoursDao {
+    /**
+     * Реализация метода, который получает часы в семестре по коду группы
+     * @param semester - семестр
+     * @param code - код группы
+     * @return объект класса EducationHours
+     */
     public EducationHours getHoursByGroupCodeAndSemester(int semester, String code) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
@@ -35,6 +44,10 @@ public class EducationHoursDaoImpl implements EducationHoursDao {
         }
     }
 
+    /**
+     * метод, добавляющий часы
+     * @param educationHours - объект класса часов
+     */
     @Override
     public void addHours(EducationHours educationHours) {
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -47,6 +60,11 @@ public class EducationHoursDaoImpl implements EducationHoursDao {
         session.close();
     }
 
+    /**
+     * получает объект класса EducationHours по названию
+     * @param hoursName - часы
+     * @return объект класса EducationHours
+     */
     @Override
     public EducationHours getHoursByName(String hoursName) {
         Session session = HibernateUtil.getSessionFactory().openSession();

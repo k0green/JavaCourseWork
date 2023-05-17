@@ -11,8 +11,18 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
 
+/**
+ *  Реализация интерфейса AttestationTypeDao.
+ *
+ * @author Egor
+ * @version 1.0
+ */
 public class AttestationTypeDaoImpl implements AttestationTypeDao {
 
+    /**
+     * Получает все типы аттестаций из базы данных.
+     * @return Список типов аттестаций.
+     */
     public List<AttestationType> getAllTypes() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
@@ -22,5 +32,4 @@ public class AttestationTypeDaoImpl implements AttestationTypeDao {
         session.close();
         return types;
     }
-
 }

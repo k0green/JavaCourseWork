@@ -13,8 +13,19 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
+/**
+ *  Реализация интерфейса FacultyDao.
+ *
+ * @author Egor
+ * @version 1.0
+ */
 public class FacultyDaoImpl implements FacultyDao {
 
+    /**
+     * метож ждя получения факультета по его номеру
+     * @param number - номер факультета
+     * @return объект класса Faculty
+     */
     public Faculty getFacultyByNumber(String number) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();

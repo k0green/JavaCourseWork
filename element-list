@@ -1,0 +1,10 @@
+module:com.example.javacoursework
+com.example.javacoursework
+com.example.javacoursework.Controller
+com.example.javacoursework.dao
+com.example.javacoursework.dao.Impl
+com.example.javacoursework.entity
+com.example.javacoursework.models
+com.example.javacoursework.service
+com.example.javacoursework.service.Impl
+com.example.javacoursework.utils

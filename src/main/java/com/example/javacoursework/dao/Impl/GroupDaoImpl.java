@@ -1,8 +1,6 @@
 package com.example.javacoursework.dao.Impl;
 
 import com.example.javacoursework.dao.GroupDao;
-import com.example.javacoursework.dao.StudentsDao;
-import com.example.javacoursework.entity.Students;
 import com.example.javacoursework.entity.StudyGroup;
 import com.example.javacoursework.utils.HibernateUtil;
 import org.hibernate.HibernateException;
@@ -15,8 +13,18 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
+/**
+ *  Реализация интерфейса GroupDao.
+ *
+ * @author Egor
+ * @version 1.0
+ */
 public class GroupDaoImpl implements GroupDao {
 
+    /**
+     * метод для получения всех групп
+     * @return список групп
+     */
     public List<StudyGroup> getAllGroup() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
@@ -27,6 +35,10 @@ public class GroupDaoImpl implements GroupDao {
         return groups;
     }
 
+    /**
+     * метод добавляет группу
+     * @param group - объект класса StudyGroup
+     */
     @Override
     public void Add(StudyGroup group) {
             Session session = HibernateUtil.getSessionFactory().openSession();
@@ -39,18 +51,11 @@ public class GroupDaoImpl implements GroupDao {
             session.close();
     }
 
-
-/*    public void Delete(Film film) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        try {
-            session.delete(film);
-        }catch (HibernateException e){
-            transaction.rollback();
-        }
-        session.close();
-    }*/
-
+    /**
+     * метод для получения группы по ее номеру
+     * @param groupNum - номер группы
+     * @return возвращает объект класса getGroupByName
+     */
     @Override
     public StudyGroup getGroupByName(String groupNum) {
         Session session = HibernateUtil.getSessionFactory().openSession();

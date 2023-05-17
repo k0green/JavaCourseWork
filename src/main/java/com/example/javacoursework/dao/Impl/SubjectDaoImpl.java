@@ -1,9 +1,6 @@
 package com.example.javacoursework.dao.Impl;
 
-import com.example.javacoursework.dao.GroupDao;
 import com.example.javacoursework.dao.SubjectDao;
-import com.example.javacoursework.entity.Students;
-import com.example.javacoursework.entity.StudyGroup;
 import com.example.javacoursework.entity.Subject;
 import com.example.javacoursework.utils.HibernateUtil;
 import org.hibernate.HibernateException;
@@ -16,8 +13,18 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
+/**
+ *  Реализация интерфейса SubjectDao.
+ *
+ * @author Egor
+ * @version 1.0
+ */
 public class SubjectDaoImpl implements SubjectDao {
 
+    /**
+     * реализация метода для получения всех предметов
+     * @return список предметов
+     */
     public List<Subject> getAllSubject() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
@@ -28,6 +35,11 @@ public class SubjectDaoImpl implements SubjectDao {
         return subjects;
     }
 
+    /**
+     * реализация метода для получения предмета по его названию
+     * @param subjectName - название предмета
+     * @return объект класса Subject
+     */
     @Override
     public Subject getSubjectByName(String subjectName) {
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -45,6 +57,10 @@ public class SubjectDaoImpl implements SubjectDao {
         }
     }
 
+    /**
+     * реализация метода для добавления предмета
+     * @param subject - объект класса Subject
+     */
     @Override
     public void addSubject(Subject subject) {
         Session session = HibernateUtil.getSessionFactory().openSession();

@@ -41,7 +41,7 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" prefHeight="20.0" prefWidth="603.0" text="по дисциплине &quot;Программирование на Java&quot;">
+            <Label alignment="CENTER" prefHeight="20.0" prefWidth="603.0" text="по дисциплине &quot;Программирование на языке Java&quot;">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
